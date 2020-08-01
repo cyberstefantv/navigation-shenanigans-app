@@ -10,6 +10,18 @@ import { HomeNavigator } from './HomeNavigator';
 
 const Stack = createStackNavigator();
 
+const customCardStyleInterpolator = ({ current }) => {
+  console.warn('current progress: ', current.progress);
+  return {
+    containerStyle: {
+      // opacity: current.progress,
+    },
+    shadowStyle: {
+      opacity: current.progress,
+    },
+  };
+};
+
 export const RootNavigator = () => {
   return (
     <Stack.Navigator mode="modal" headerMode="none">
@@ -31,8 +43,7 @@ export const RootNavigator = () => {
         name="FancyNavigatorWithCustom"
         component={FancyNavigator}
         options={{
-          cardStyleInterpolator:
-            CardStyleInterpolators.forFadeFromBottomAndroid,
+          cardStyleInterpolator: customCardStyleInterpolator,
         }}
       />
     </Stack.Navigator>
