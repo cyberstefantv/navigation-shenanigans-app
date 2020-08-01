@@ -5,15 +5,21 @@ export const HomeScreen = ({ navigation }) => {
   return (
     <ScrollView>
       <Button
-        title="Open the fancy screen"
+        title="Fancy screen with default style"
         onPress={() => {
           navigation.navigate('FancyNavigator');
         }}
       />
       <Button
-        title="Do stuff"
+        title="Fancy screen with iOS13 modal style"
         onPress={() => {
-          console.warn('Stuff!');
+          navigation.navigate('FancyNavigatorWithModalPresentationIOS');
+        }}
+      />
+      <Button
+        title="Fancy screen with custom style"
+        onPress={() => {
+          navigation.navigate('FancyNavigatorWithCustom');
         }}
       />
     </ScrollView>
