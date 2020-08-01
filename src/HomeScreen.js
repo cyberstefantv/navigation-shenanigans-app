@@ -1,10 +1,21 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { ScrollView, Button } from 'react-native';
 
 export const HomeScreen = () => {
   return (
-    <View>
-      <Text>Hello from the home screen.</Text>
-    </View>
+    <ScrollView>
+      <Button
+        title="Do stuff"
+        onPress={() => {
+          console.warn('Stuff!');
+        }}
+      />
+      <Button
+        title="Do stuff"
+        onPress={() => {
+          console.warn('Stuff!');
+        }}
+      />
+    </ScrollView>
   );
 };
