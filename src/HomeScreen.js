@@ -1,13 +1,13 @@
 import React from 'react';
 import { ScrollView, Button } from 'react-native';
 
-export const HomeScreen = () => {
+export const HomeScreen = ({ navigation }) => {
   return (
     <ScrollView>
       <Button
-        title="Do stuff"
+        title="Open the fancy screen"
         onPress={() => {
-          console.warn('Stuff!');
+          navigation.navigate('FancyNavigator');
         }}
       />
       <Button
