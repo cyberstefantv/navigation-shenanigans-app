@@ -5,9 +5,9 @@ export const HomeScreen = ({ navigation }) => {
   return (
     <ScrollView>
       <Button
-        title="Playground >"
+        title="Drill into Playground"
         onPress={() => {
-          navigation.navigate('PlaygroundNavigator');
+          navigation.navigate('Playground');
         }}
       />
       <Button
