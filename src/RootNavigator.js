@@ -7,11 +7,11 @@ import {
 } from '@react-navigation/stack';
 import { FancyNavigator } from './FancyNavigator';
 import { HomeNavigator } from './HomeNavigator';
+import { PlaygroundNavigator } from './playground';
 
 const Stack = createStackNavigator();
 
 const customCardStyleInterpolator = ({ current }) => {
-  console.warn('current progress: ', current.progress);
   return {
     containerStyle: {
       // opacity: current.progress,
@@ -26,6 +26,10 @@ export const RootNavigator = () => {
   return (
     <Stack.Navigator mode="modal" headerMode="none">
       <Stack.Screen name="HomeNavigator" component={HomeNavigator} />
+      <Stack.Screen
+        name="PlaygroundNavigator"
+        component={PlaygroundNavigator}
+      />
       <Stack.Screen name="FancyNavigator" component={FancyNavigator} />
       <Stack.Screen
         name="FancyNavigatorWithModalPresentationIOS"
