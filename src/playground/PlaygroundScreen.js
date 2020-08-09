@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   ScrollView,
   Text,
@@ -16,9 +16,26 @@ const styles = StyleSheet.create({
 });
 
 export const PlaygroundScreen = () => {
+  // We are now driving scrollX from the ScrollView.
+  const scrollX = useRef(new Animated.Value(0));
+
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <Animated.ScrollView
+      contentContainerStyle={styles.container}
+      onScroll={Animated.event(
+        // scrollX = e.nativeEvent.contentOffset.x
+        [
+          {
+            nativeEvent: {
+              contentOffset: {
+                x: scrollX.current,
+              },
+            },
+          },
+        ],
+        { useNativeDriver: true },
+      )}>
       <FadingView />
-    </ScrollView>
+    </Animated.ScrollView>
   );
 };
